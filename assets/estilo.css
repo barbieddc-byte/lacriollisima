@@ -427,3 +427,10 @@ html.pdf body{padding-bottom:0}
 .videos{grid-template-columns:1fr!important}.videos video:first-child{max-height:620px}
 @media (max-width:980px){.tabbar{padding-left:max(2px,env(safe-area-inset-left,0px));padding-right:max(2px,env(safe-area-inset-right,0px));column-gap:0}.tabbar a{font-size:.64rem;letter-spacing:-.01em;padding:4px 0}}
 @media (max-width:359px){.tabbar a{font-size:.55rem;letter-spacing:-.02em}.tabbar a svg{width:21px;height:21px}}
+/* Un solo vídeo horizontal en Food truck: anula las reglas del vídeo vertical */
+.videos video:last-child{aspect-ratio:16/9!important;max-width:none!important;justify-self:stretch!important}
+.foto-doble{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.foto-doble figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:4px}
+.foto-doble .foto-p{width:100%;aspect-ratio:1!important;margin:0}
+.foto-doble figcaption{font-size:.72rem;font-weight:700;background:var(--amarillo);border-radius:60px;padding:.05em .7em}
+.con-precio.sin-precio li{justify-content:flex-start}
