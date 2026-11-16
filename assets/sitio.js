@@ -27,6 +27,12 @@
       var pick=/Pickup/.test(r.value);
       [].forEach.call(f.querySelectorAll('.solo-delivery'),function(e){e.hidden=pick});
       [].forEach.call(f.querySelectorAll('.solo-pickup'),function(e){e.hidden=!pick});
+      var sel=f.querySelector('select[data-label=Pago]');
+      if(sel){
+        if(!sel._pv){sel._pv=sel.querySelector('option.solo-pickup');if(sel._pv){sel._pvNext=sel._pv.nextElementSibling;sel._pv.hidden=false;sel._pv.classList.remove('solo-pickup')}}
+        var o=sel._pv;
+        if(o){ if(pick&&!o.parentNode){sel.insertBefore(o,sel._pvNext)} if(!pick&&o.parentNode){if(o.selected)sel.selectedIndex=0;o.remove()} }
+      }
     }
     [].forEach.call(document.querySelectorAll('[data-modo]'),function(a){
       a.addEventListener('click',function(){

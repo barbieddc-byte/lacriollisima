@@ -370,3 +370,7 @@ html.pdf .nav,html.pdf .saltar,html.pdf body::before{display:none}
 .lista-pagos{margin:0;padding-left:1.1em;display:grid;gap:2px;font-size:.95rem}
 @media (max-width:700px){.opciones-entrega{grid-template-columns:1fr}}
 [hidden]{display:none!important}
+.inv{display:inline-block;transform:rotate(180deg);transform-origin:50% 58%;margin-right:.04em}
+.sub-legend{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-top:8px;opacity:.8}
+fieldset .sub-legend + .chips{margin-top:6px}
+.puerta .ico{overflow:hidden}.puerta .ico img{width:84%;height:84%;object-fit:contain}

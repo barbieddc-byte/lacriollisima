@@ -60,7 +60,7 @@
       <ol class="lista-pasos">
         <li><div><b>Elige en el menú</b>Mira el <a href="menu.html" style="color:var(--amarillo)">menú completo</a> y los combos del día.</div></li>
         <li><div><b>Escríbenos por WhatsApp</b>Llena el formulario y se abre WhatsApp con tu pedido ya escrito. Si es delivery, compártenos tu <b style="display:inline">ubicación GPS</b> en el chat.</div></li>
-        <li><div><b>Confirmamos y pagas</b>Te decimos el total (y el envío, si es delivery). Pago móvil, efectivo, punto de venta, Zelle o Binance.</div></li>
+        <li><div><b>Confirmamos y pagas</b>Te decimos el total (y el envío, si es delivery). Pago móvil, efectivo, Zelle o Binance; en pickup también punto de venta.</div></li>
         <li><div><b>Te lo llevamos o lo retiras</b>Preparamos tu pedido al momento. Te avisamos cuando salga o cuando esté listo para retirar.</div></li>
       </ol>
       <div class="numero">
@@ -102,14 +102,25 @@
         <label for="d-pedido">Tu pedido</label>
         <textarea id="d-pedido" placeholder="Ej.: 2 Arepas Criollísimas mixtas, 1 combo FullSabor personal" data-label="Pedido"></textarea>
       </div>
-      <fieldset data-label="Combos que me interesan">
-        <span class="legend">¿Algún combo? (opcional)</span>
+      <fieldset data-label="Bebidas">
+        <span class="legend">¿Algo adicional? (opcional)</span>
+        <p class="sub-legend">Bebidas</p>
         <div class="chips">
-          <label class="chip"><input type="checkbox" value="Personal (arepa)"><span>Personal arepa</span></label>
-          <label class="chip"><input type="checkbox" value="Criollísimo dúo"><span>Criollísimo dúo</span></label>
-          <label class="chip"><input type="checkbox" value="FullSabor personal"><span>FullSabor personal</span></label>
-          <label class="chip"><input type="checkbox" value="Amigos (4 hamburguesas)"><span>Amigos</span></label>
-          <label class="chip"><input type="checkbox" value="Tenders"><span>Tenders</span></label>
+          <label class="chip"><input type="checkbox" value="Refresco 16 oz"><span>Refresco 16 oz</span></label>
+          <label class="chip"><input type="checkbox" value="Refresco 22 oz"><span>Refresco 22 oz</span></label>
+          <label class="chip"><input type="checkbox" value="Refresco en lata"><span>Lata</span></label>
+          <label class="chip"><input type="checkbox" value="Bombonita"><span>Bombonita</span></label>
+          <label class="chip"><input type="checkbox" value="Refresco 1,5 L"><span>Refresco 1,5 L</span></label>
+          <label class="chip"><input type="checkbox" value="Nestea"><span>Nestea</span></label>
+          <label class="chip"><input type="checkbox" value="Té natural"><span>Té natural</span></label>
+          <label class="chip"><input type="checkbox" value="Agua Minalba"><span>Agua Minalba</span></label>
+        </div>
+      </fieldset>
+      <fieldset data-label="Postre">
+        <p class="sub-legend">Postres</p>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" value="Quesillo"><span>Quesillo</span></label>
+          <label class="chip"><input type="checkbox" value="Torta del día"><span>Torta del día</span></label>
         </div>
       </fieldset>
       <div class="campo ancho">
@@ -118,7 +129,7 @@
           <option>Pago móvil</option>
           <option>Efectivo en bolívares</option>
           <option>Efectivo en divisas</option>
-          <option>Punto de venta (tarjeta)</option>
+          <option class="solo-pickup">Punto de venta (tarjeta, solo pickup)</option>
           <option>Zelle</option>
           <option>Binance</option>
         </select>
