@@ -401,3 +401,29 @@ input[type="date"]{-webkit-appearance:none;appearance:none;display:block;width:1
 input[type="date"]::-webkit-date-and-time-value{text-align:left;margin:0}
 input[type="date"]::-webkit-calendar-picker-indicator{opacity:.7;cursor:pointer}
 .campo{overflow:hidden;padding-bottom:2px}
+
+/* ===== Navegación siempre visible ===== */
+.nav .pedir{display:inline-flex;align-items:center;gap:.45em}
+.nav .pedir svg{width:1.2em;height:1.2em}
+.nav .txt-corto{display:none}
+.nav .menu-btn{display:none!important}
+.tabbar{display:none}
+@media (max-width:980px){
+  .nav-escritorio{display:none}
+  .nav .pedir{display:inline-flex!important;padding:.5em 1em}
+  .nav .txt-largo{display:none}.nav .txt-corto{display:inline}
+  .tabbar{display:grid;grid-template-columns:repeat(6,1fr);position:fixed;left:0;right:0;bottom:0;z-index:35;background:var(--marron);border-top:3px solid var(--marron-2);padding:6px max(4px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(4px,env(safe-area-inset-left,0px));box-shadow:0 -6px 18px rgba(0,0,0,.18)}
+  .tabbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:52px;padding:4px 2px;border-radius:14px;text-decoration:none;color:var(--crema);font-weight:600;font-size:.68rem;line-height:1.1;text-align:center;min-width:0}
+  .tabbar a svg{width:24px;height:24px}
+  .tabbar a span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  .tabbar a[aria-current="page"]{background:var(--amarillo);color:var(--marron)}
+  .tabbar a:focus-visible{outline:3px solid var(--naranja);outline-offset:-3px}
+  body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+  .flota{display:none}
+}
+@media (max-width:360px){.tabbar a{font-size:.6rem}.tabbar a svg{width:22px;height:22px}}
+html.pdf .tabbar{display:none!important}
+html.pdf body{padding-bottom:0}
+.videos{grid-template-columns:1fr!important}.videos video:first-child{max-height:620px}
+@media (max-width:980px){.tabbar{padding-left:max(2px,env(safe-area-inset-left,0px));padding-right:max(2px,env(safe-area-inset-right,0px));column-gap:0}.tabbar a{font-size:.64rem;letter-spacing:-.01em;padding:4px 0}}
+@media (max-width:359px){.tabbar a{font-size:.55rem;letter-spacing:-.02em}.tabbar a svg{width:21px;height:21px}}
