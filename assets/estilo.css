@@ -396,3 +396,8 @@ html.pdf .video-ft{display:none}
 .video-pedido{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:var(--r);border:3px solid var(--marron);box-shadow:0 10px 0 var(--marron);background:#000;display:block}
 @media (max-width:860px){.cab-video{grid-template-columns:1fr}.video-pedido{max-width:260px;justify-self:center}}
 .elige span.solo{padding-right:0;background:var(--blanco)}
+/* iPhone: la casilla de fecha tiene un ancho propio; se fuerza al de las demás */
+input[type="date"]{-webkit-appearance:none;appearance:none;display:block;width:100%;max-width:100%;min-width:0;min-height:calc(1.6em + 1.2em + 4px);line-height:1.6;text-align:left}
+input[type="date"]::-webkit-date-and-time-value{text-align:left;margin:0}
+input[type="date"]::-webkit-calendar-picker-indicator{opacity:.7;cursor:pointer}
+.campo{overflow:hidden;padding-bottom:2px}
