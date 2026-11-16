@@ -355,3 +355,7 @@ html.pdf .nav,html.pdf .saltar,html.pdf body::before{display:none}
 .tabla-precios .cab>*{font-family:var(--texto)!important;font-size:.8rem!important;letter-spacing:.04em}
 @media (max-width:480px){.tabla-precios [role=row]{grid-template-columns:1fr 64px 92px}.tabla-precios{font-size:.85rem}}
 .tabla-precios .cab>*{line-height:1.2}
+.item.lleno{grid-column:1/-1}
+.con-precio.dos{grid-template-columns:1fr 1fr;column-gap:32px}
+.con-precio li{min-width:0}
+@media (max-width:600px){.con-precio.dos{grid-template-columns:1fr}}
