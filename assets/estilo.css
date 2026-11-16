@@ -359,3 +359,4 @@ html.pdf .nav,html.pdf .saltar,html.pdf body::before{display:none}
 .con-precio.dos{grid-template-columns:1fr 1fr;column-gap:32px}
 .con-precio li{min-width:0}
 @media (max-width:600px){.con-precio.dos{grid-template-columns:1fr}}
+.pie .rif{display:inline-block;margin-top:6px;font-size:.85rem;opacity:.85;letter-spacing:.03em}
