@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Delivery · La Criollísima</title>
-<meta name="description" content="Pide a domicilio en Maracaibo por WhatsApp. Todos los días de 6 pm a 12 am.">
+<title>Pedidos: delivery y pickup · La Criollísima</title>
+<meta name="description" content="Pide por WhatsApp y recíbelo en casa o retíralo en North Center, Maracaibo. Todos los días de 6 pm a 12 am.">
 <link rel="canonical" href="https://lacriollisima.com/delivery">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lacriollisima.com/delivery">
-<meta property="og:title" content="Delivery · La Criollísima">
-<meta property="og:description" content="Pide a domicilio en Maracaibo por WhatsApp. Todos los días de 6 pm a 12 am.">
+<meta property="og:title" content="Pedidos: delivery y pickup · La Criollísima">
+<meta property="og:description" content="Pide por WhatsApp y recíbelo en casa o retíralo en North Center, Maracaibo. Todos los días de 6 pm a 12 am.">
 <meta property="og:image" content="https://lacriollisima.com/img/vista-previa.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -28,7 +28,7 @@
 <header class="nav">
   <div class="wrap">
     <a class="marca" href="index.html"><img src="img/logo-horizontal.webp" alt="La Criollísima, ir al inicio" width="900" height="160"></a>
-    <nav aria-label="Principal"><ul><li><a href="index.html">Inicio</a></li><li><a href="menu.html">Menú</a></li><li><a href="delivery.html" aria-current="page">Delivery</a></li><li><a href="food-truck.html">Food truck</a></li><li><a href="conocenos.html">Conócenos</a></li><li><a href="contacto.html">Contacto</a></li></ul></nav>
+    <nav aria-label="Principal"><ul><li><a href="index.html">Inicio</a></li><li><a href="menu.html">Menú</a></li><li><a href="delivery.html" aria-current="page">Pedidos</a></li><li><a href="food-truck.html">Food truck</a></li><li><a href="conocenos.html">Conócenos</a></li><li><a href="contacto.html">Contacto</a></li></ul></nav>
     <a class="pedir" href="https://wa.me/584246540852" data-wa="Hola, La Criollísima. Quiero hacer un pedido." target="_blank" rel="noopener">Pedir por WhatsApp</a>
     <button class="menu-btn" type="button" aria-expanded="false">☰ <span>Menú</span></button>
   </div>
@@ -36,12 +36,18 @@
 <main id="contenido">
 <section class="patron cabeza" aria-labelledby="t-del">
   <div class="wrap">
-    <p class="eyebrow">Delivery · Todos los días de 6 pm a 12 am</p>
-    <h1 id="t-del">La Criollísima en tu casa</h1>
-    <p class="lead">Haz tu pedido por WhatsApp y te lo llevamos. El costo del envío depende de tu zona: te lo confirmamos por WhatsApp cuando nos compartas tu ubicación.</p>
-    <div class="acciones">
-      <a class="btn" href="#pedido"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Armar mi pedido</a>
-      <a class="btn claro" href="menu.html">Ver el menú</a>
+    <p class="eyebrow">Pedidos · Todos los días de 6 pm a 12 am</p>
+    <h1 id="t-del">Pide por WhatsApp</h1>
+    <p class="lead">Haz tu pedido por WhatsApp y elige cómo recibirlo: te lo llevamos a casa o lo retiras en nuestra sede de North Center.</p>
+    <div class="opciones-entrega">
+      <a class="opcion" href="#pedido" data-modo="Delivery">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="17" r="3"/><circle cx="18.5" cy="17" r="3"/><path d="M8.5 17h6l2-6h-4l-2 3H6M14 6h3l1.5 5"/></svg>
+        <span><b>Delivery</b>Te lo llevamos. El envío depende de tu zona y lo confirmamos cuando nos compartas tu ubicación GPS.</span>
+      </a>
+      <a class="opcion" href="#pedido" data-modo="Pickup">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span><b>Pickup</b>Pide por WhatsApp y retíralo en Av. Fuerzas Armadas, C.C. North Center, zona de trailers. Sin costo de envío.</span>
+      </a>
     </div>
   </div>
 </section>
@@ -53,9 +59,9 @@
       <h2 id="t-ped" style="margin-top:10px">Cómo pedir</h2>
       <ol class="lista-pasos">
         <li><div><b>Elige en el menú</b>Mira el <a href="menu.html" style="color:var(--amarillo)">menú completo</a> y los combos del día.</div></li>
-        <li><div><b>Escríbenos por WhatsApp</b>Llena el formulario y se abre WhatsApp con tu pedido ya escrito. Envíalo y compártenos tu <b style="display:inline">ubicación GPS</b> en el chat.</div></li>
-        <li><div><b>Confirmamos y pagas</b>Con tu ubicación te decimos el costo del envío y el total. Recibimos bolívares a tasa BCV del euro.</div></li>
-        <li><div><b>Te lo llevamos</b>Preparamos tu pedido al momento y sale para tu casa.</div></li>
+        <li><div><b>Escríbenos por WhatsApp</b>Llena el formulario y se abre WhatsApp con tu pedido ya escrito. Si es delivery, compártenos tu <b style="display:inline">ubicación GPS</b> en el chat.</div></li>
+        <li><div><b>Confirmamos y pagas</b>Te decimos el total (y el envío, si es delivery). Pago móvil, efectivo, punto de venta, Zelle o Binance.</div></li>
+        <li><div><b>Te lo llevamos o lo retiras</b>Preparamos tu pedido al momento. Te avisamos cuando salga o cuando esté listo para retirar.</div></li>
       </ol>
       <div class="numero">
         <span>WhatsApp:</span><code id="tel">+58 424 654 0852</code>
@@ -63,18 +69,34 @@
       </div>
     </div>
 
-    <form novalidate data-intro="Hola, La Criollísima. Quiero hacer un pedido para delivery. Ahora les comparto mi ubicación GPS.">
+    <form novalidate data-intro="Hola, La Criollísima. Quiero hacer un pedido.">
+      <fieldset class="entrega" data-label="Entrega">
+        <span class="legend">¿Cómo lo quieres?</span>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="modo" value="Delivery" checked><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="17" r="3"/><circle cx="18.5" cy="17" r="3"/><path d="M8.5 17h6l2-6h-4l-2 3H6M14 6h3l1.5 5"/></svg> Delivery</span></label>
+          <label class="chip"><input type="radio" name="modo" value="Pickup (retiro en North Center)"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg> Pickup en la sede</span></label>
+        </div>
+      </fieldset>
       <div class="campo">
         <label for="d-nombre">Tu nombre</label>
         <input id="d-nombre" autocomplete="name" placeholder="Ej.: María Pérez" data-label="Nombre">
       </div>
       <div class="campo">
+        <label for="d-tel">Teléfono de contacto</label>
+        <input id="d-tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="Ej.: 0414 123 4567" data-label="Teléfono">
+      </div>
+      <div class="campo solo-delivery">
         <label for="d-zona">Zona o urbanización</label>
         <input id="d-zona" placeholder="Ej.: La Lago" data-label="Zona">
       </div>
-      <div class="campo ancho">
+      <div class="campo solo-delivery">
         <label for="d-dir">Dirección y punto de referencia</label>
-        <input id="d-dir" autocomplete="street-address" placeholder="Ej.: Calle 72, edificio azul frente a la farmacia" data-label="Dirección">
+        <input id="d-dir" autocomplete="street-address" placeholder="Ej.: Calle 72, edificio azul" data-label="Dirección">
+      </div>
+      <input type="hidden" class="solo-delivery" data-label="Ubicación" value="les comparto mi ubicación GPS en este chat">
+      <div class="campo solo-pickup" hidden>
+        <label for="d-hora">¿A qué hora pasas a retirar?</label>
+        <input id="d-hora" placeholder="Ej.: 8:30 pm" data-label="Hora de retiro">
       </div>
       <div class="campo ancho">
         <label for="d-pedido">Tu pedido</label>
@@ -90,19 +112,21 @@
           <label class="chip"><input type="checkbox" value="Tenders"><span>Tenders</span></label>
         </div>
       </fieldset>
-      <div class="campo">
+      <div class="campo ancho">
         <label for="d-pago">Forma de pago</label>
         <select id="d-pago" data-label="Pago">
-          <option>Bolívares a tasa BCV del euro</option>
+          <option>Pago móvil</option>
+          <option>Efectivo en bolívares</option>
+          <option>Efectivo en divisas</option>
+          <option>Punto de venta (tarjeta)</option>
+          <option>Zelle</option>
+          <option>Binance</option>
         </select>
-      </div>
-      <div class="campo">
-        <label for="d-tel">Teléfono de contacto</label>
-        <input id="d-tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="Ej.: 0414 123 4567" data-label="Teléfono">
       </div>
       <div class="preview" aria-live="polite"></div>
       <div class="form-pie">
-        <small>Se abre WhatsApp con tu pedido. Después de enviarlo, comparte tu ubicación GPS en el chat para calcular el envío.</small>
+        <small class="solo-delivery">Se abre WhatsApp con tu pedido. Después de enviarlo, comparte tu ubicación GPS en el chat para calcular el envío.</small>
+        <small class="solo-pickup" hidden>Se abre WhatsApp con tu pedido. Te avisamos cuando esté listo para retirar en North Center.</small>
         <a class="btn enviar" href="https://wa.me/584246540852" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Enviar pedido</a>
       </div>
     </form>

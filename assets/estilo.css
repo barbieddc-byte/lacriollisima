@@ -360,3 +360,13 @@ html.pdf .nav,html.pdf .saltar,html.pdf body::before{display:none}
 .con-precio li{min-width:0}
 @media (max-width:600px){.con-precio.dos{grid-template-columns:1fr}}
 .pie .rif{display:inline-block;margin-top:6px;font-size:.85rem;opacity:.85;letter-spacing:.03em}
+.opciones-entrega{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px;max-width:860px}
+.opcion{display:flex;gap:14px;align-items:flex-start;text-decoration:none;background:var(--crema);border:2px solid var(--marron);border-radius:22px;padding:18px;box-shadow:0 6px 0 var(--marron);transition:transform .15s}
+.opcion:hover{transform:translateY(-3px)}
+.opcion svg{width:38px;height:38px;flex:none;color:var(--naranja)}
+.opcion b{display:block;font-family:var(--display);font-weight:400;font-size:1.6rem;line-height:1.1}
+.opcion span{font-size:.92rem;line-height:1.45;min-width:0}
+.chip span svg{width:1.1em;height:1.1em;vertical-align:-.2em}
+.lista-pagos{margin:0;padding-left:1.1em;display:grid;gap:2px;font-size:.95rem}
+@media (max-width:700px){.opciones-entrega{grid-template-columns:1fr}}
+[hidden]{display:none!important}

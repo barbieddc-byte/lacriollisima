@@ -12,6 +12,7 @@
     function msg(){
       var l=[f.getAttribute('data-intro')];
       [].forEach.call(f.querySelectorAll('[data-label]'),function(el){
+        if(el.hidden||el.closest('[hidden]'))return;
         var v='';
         if(el.tagName==='FIELDSET'){v=[].map.call(el.querySelectorAll('input:checked'),function(i){return i.value}).join(', ')}
         else{v=(el.value||'').trim(); if(el.type==='date')v=fecha(v)}
@@ -20,6 +21,21 @@
       return l.join('\n');
     }
     function upd(){var m=msg();if(prev)prev.textContent=m;if(env)env.href='https://wa.me/'+NUM+'?text='+encodeURIComponent(m)}
+    // Delivery o pickup: mostrar solo los campos que tocan
+    function modo(){
+      var r=f.querySelector('input[name=modo]:checked'); if(!r)return;
+      var pick=/Pickup/.test(r.value);
+      [].forEach.call(f.querySelectorAll('.solo-delivery'),function(e){e.hidden=pick});
+      [].forEach.call(f.querySelectorAll('.solo-pickup'),function(e){e.hidden=!pick});
+    }
+    [].forEach.call(document.querySelectorAll('[data-modo]'),function(a){
+      a.addEventListener('click',function(){
+        var want=a.getAttribute('data-modo');
+        [].forEach.call(f.querySelectorAll('input[name=modo]'),function(r){r.checked=r.value.indexOf(want)===0});
+        modo();upd();
+      });
+    });
+    f.addEventListener('change',modo);modo();
     f.addEventListener('input',upd);f.addEventListener('change',upd);
     f.addEventListener('submit',function(e){e.preventDefault()});
     upd();
