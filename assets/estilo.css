@@ -434,3 +434,44 @@ html.pdf body{padding-bottom:0}
 .foto-doble .foto-p{width:100%;aspect-ratio:1!important;margin:0}
 .foto-doble figcaption{font-size:.72rem;font-weight:700;background:var(--amarillo);border-radius:60px;padding:.05em .7em}
 .con-precio.sin-precio li{justify-content:flex-start}
+
+/* ===== Botones que se ven «tocables» ===== */
+a,button,label.chip,.opcion,.puerta{-webkit-tap-highlight-color:transparent}
+/* Brillo que cruza los botones principales cada pocos segundos */
+.btn:not(.claro),.nav .pedir{position:relative;overflow:hidden;isolation:isolate}
+.btn:not(.claro)::after,.nav .pedir::after{content:"";position:absolute;inset:-2px auto -2px -60%;width:45%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.38),transparent);transform:skewX(-18deg);animation:brillo 4.5s ease-in-out infinite}
+.btn:not(.claro):nth-of-type(2)::after{animation-delay:1.2s}
+@keyframes brillo{0%,62%{left:-60%}82%,100%{left:130%}}
+/* Al pulsar: se hunde y se encoge un poco (funciona con el dedo) */
+.btn:active,.nav .pedir:active,.copiar:active{transform:translateY(4px) scale(.97);box-shadow:0 2px 0 var(--marron-2)}
+.btn.claro:hover{background:var(--blanco)}
+/* Botón verde: halo que late */
+.nav .pedir{animation:late 2.6s ease-out infinite}
+@keyframes late{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 0 0 12px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.flota{animation:late 2.6s ease-out infinite}
+/* Tarjetas que llevan a otra página: la flecha se mueve sola */
+.puerta .ir{display:inline-flex;align-items:center;gap:.3em;color:var(--naranja)}
+.puerta .ir{animation:empuja 2.2s ease-in-out infinite}
+@keyframes empuja{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+.puerta:active,.opcion:active{transform:translateY(3px) scale(.98)}
+.puerta:active{box-shadow:0 3px 0 var(--marron)}
+/* Delivery / Pickup: icono que rebota y aviso «Elegir» */
+.opcion svg{animation:rebota 2.4s ease-in-out infinite}
+.opcion:nth-child(2) svg{animation-delay:.6s}
+@keyframes rebota{0%,70%,100%{transform:translateY(0)}80%{transform:translateY(-6px)}90%{transform:translateY(0)}}
+.opcion b::after{content:" →";color:var(--naranja);font-family:var(--texto);font-weight:700;font-size:.9em;display:inline-block;animation:empuja 2.2s ease-in-out infinite}
+/* Opciones del formulario y pestañas */
+.chip span{transition:transform .12s,background .15s,color .15s}
+.chip:active span{transform:scale(.94)}
+.chip span:hover{background:var(--amarillo)}
+.chip input:checked+span:hover{background:var(--marron)}
+.pestanas a{transition:transform .12s,background .15s,color .15s}
+.pestanas a:active{transform:scale(.94)}
+.tabbar a{transition:transform .12s,background .2s}
+.tabbar a:active{transform:scale(.9)}
+
+@media (hover:hover){.puerta:hover .ir{animation-play-state:paused;transform:translateX(8px)}}
+@media (prefers-reduced-motion:reduce){.btn::after,.nav .pedir::after{display:none}}
+.btn.claro{position:relative;overflow:hidden;isolation:isolate}
+.btn.claro::after{content:"";position:absolute;inset:-2px auto -2px -60%;width:45%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(249,155,6,.35),transparent);transform:skewX(-18deg);animation:brillo 4.5s ease-in-out infinite;animation-delay:2.2s}
+@media (prefers-reduced-motion:reduce){.btn.claro::after{display:none}}

@@ -1,4 +1,6 @@
 (function(){
+  // Para que :active funcione al tocar en iPhone
+  document.addEventListener('touchstart',function(){},{passive:true});
   var NUM='584246540852';
   // Menú móvil
   var nav=document.querySelector('.nav'), btn=document.querySelector('.menu-btn');
