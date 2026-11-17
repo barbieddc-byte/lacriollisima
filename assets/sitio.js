@@ -62,4 +62,17 @@
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){tabs.forEach(function(t){t.classList.toggle('activa',t.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});
     tabs.forEach(function(t){var s=document.querySelector(t.getAttribute('href'));if(s)io.observe(s)});
   }
+
+  // Botón verde: abre «Delivery / Pickup / Chat»
+  var hoja=document.querySelector('.hoja'), fondo=document.querySelector('.hoja-fondo'), ult=null;
+  function abrir(e){ if(!hoja)return; e.preventDefault(); ult=e.currentTarget; hoja.hidden=false; fondo.hidden=false; requestAnimationFrame(function(){hoja.classList.add('abierta');fondo.classList.add('abierta')}); var p=hoja.querySelector('.hoja-op'); if(p)p.focus(); }
+  function cerrar(){ if(!hoja||hoja.hidden)return; hoja.classList.remove('abierta'); fondo.classList.remove('abierta'); setTimeout(function(){hoja.hidden=true;fondo.hidden=true},200); if(ult)ult.focus(); }
+  [].forEach.call(document.querySelectorAll('[data-opciones]'),function(b){b.addEventListener('click',abrir)});
+  if(hoja){ fondo.addEventListener('click',cerrar); hoja.querySelector('.hoja-x').addEventListener('click',cerrar);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')cerrar()});
+    [].forEach.call(hoja.querySelectorAll('.hoja-op'),function(a){a.addEventListener('click',function(){setTimeout(cerrar,50)})}); }
+  // Pedidos: preseleccionar delivery o pickup desde ?modo=
+  var m=(location.search.match(/modo=(\w+)/)||[])[1];
+  if(m){ var r=[].filter.call(document.querySelectorAll('input[name=modo]'),function(x){return x.value.toLowerCase().indexOf(m)===0})[0];
+    if(r){ r.checked=true; r.dispatchEvent(new Event('change',{bubbles:true})); } }
 })();

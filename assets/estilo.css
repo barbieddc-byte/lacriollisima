@@ -475,3 +475,22 @@ a,button,label.chip,.opcion,.puerta{-webkit-tap-highlight-color:transparent}
 .btn.claro{position:relative;overflow:hidden;isolation:isolate}
 .btn.claro::after{content:"";position:absolute;inset:-2px auto -2px -60%;width:45%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(249,155,6,.35),transparent);transform:skewX(-18deg);animation:brillo 4.5s ease-in-out infinite;animation-delay:2.2s}
 @media (prefers-reduced-motion:reduce){.btn.claro::after{display:none}}
+/* ===== Opciones del botón verde ===== */
+.hoja-fondo{position:fixed;inset:0;z-index:60;background:rgba(40,26,8,.45);opacity:0;transition:opacity .2s}
+.hoja-fondo.abierta{opacity:1}
+.hoja{position:fixed;z-index:61;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:min(420px,calc(100% - 24px));background:var(--crema);color:var(--marron);border:2px solid var(--marron);border-radius:26px;box-shadow:0 10px 0 var(--marron);padding:16px;display:grid;gap:10px;transform:translate(-50%,30px);opacity:0;transition:transform .22s ease,opacity .2s}
+.hoja.abierta{transform:translate(-50%,0);opacity:1}
+.hoja-cab{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 4px 4px}
+.hoja-cab h2{font-family:var(--display);font-size:1.6rem;line-height:1.1;margin:0}
+.hoja-x{font:inherit;font-weight:700;background:transparent;border:2px solid var(--marron);color:var(--marron);border-radius:50%;width:38px;height:38px;cursor:pointer;flex:none}
+.hoja-op{display:flex;align-items:center;gap:14px;text-decoration:none;background:var(--blanco);border:2px solid var(--marron);border-radius:18px;padding:12px 14px;box-shadow:0 5px 0 var(--marron);transition:transform .12s}
+.hoja-op:active{transform:translateY(3px)}
+.hoja-op svg{width:34px;height:34px;flex:none;color:var(--naranja)}
+.hoja-op span{font-size:.9rem;line-height:1.35}
+.hoja-op b{display:block;font-family:var(--display);font-weight:400;font-size:1.45rem;line-height:1.1}
+.hoja-op b::after{content:" →";font-family:var(--texto);font-weight:700;font-size:.8em;color:var(--naranja)}
+.hoja-op.chat{background:#25D366;color:#fff;border-color:#1a9e4b;box-shadow:0 5px 0 #1a9e4b}
+.hoja-op.chat svg,.hoja-op.chat b::after{color:#fff}
+@media (max-width:980px){.hoja{bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
+@media (min-width:981px){.hoja{left:auto;right:max(24px,calc((100vw - 1080px)/2));top:84px;bottom:auto;transform:translateY(-12px)}.hoja.abierta{transform:none}}
+html.pdf .hoja,html.pdf .hoja-fondo{display:none!important}
